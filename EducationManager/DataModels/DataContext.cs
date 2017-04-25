@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
-namespace EducationManager.Models.DataModel
+namespace EducationManager.DataModels
 {
     public class DataStorage : DbContext
     {
+        public DbSet<UserAccount> UserAccounts { get; set; }
+        public DbSet<OperationRegistryUser> Users { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Subject> Subjects { get; set; }

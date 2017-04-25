@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using EducationManager.Models.AccountModel;
+using EducationManager.DataModels;
 
 namespace EducationManager.Security
 {
@@ -25,7 +25,7 @@ namespace EducationManager.Security
             }
             else
             {
-                UserAccountStorage account_storage = new UserAccountStorage();
+                DataStorage account_storage = new DataStorage();
                 CustomPrincipal mp = new CustomPrincipal(account_storage.UserAccounts.Where(u => u.UserId.Equals(UserSession.Uinform.UserId)).FirstOrDefault());
                 if (!mp.IsInRole(Roles))
                     filterContext.Result = new RedirectToRouteResult(

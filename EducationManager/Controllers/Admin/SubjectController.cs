@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EducationManager.Security;
-using EducationManager.Models.DataModel;
+using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Admin
 {

@@ -6,12 +6,10 @@ using System.Web.Mvc;
 using EducationManager.Security;
 using EducationManager.ViewModels.Admin;
 using EducationManager.ViewModels.Student;
-using EducationManager.Models.DataModel;
+using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Admin
 {
-
-
     [CustomAuthorize(Roles = "admin")]
     public class AdminClassesController : Controller
     {

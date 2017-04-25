@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EducationManager.Models.DataModel;
+using EducationManager.DataModels;
 
 namespace EducationManager.Security
 {

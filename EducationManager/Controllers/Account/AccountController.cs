@@ -4,10 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EducationManager.ViewModels.Account;
-using EducationManager.Models.AccountModel;
+using EducationManager.DataModels;
 using EducationManager.Security;
-using EducationManager.Models.OperationRegistryData;
-using EducationManager.Models.DataModel;
 using System.Net.Mail;
 using System.Net;
 
@@ -15,9 +13,8 @@ namespace EducationManager.Controllers.Account
 {
     public class AccountController : Controller
     {
-        UserAccountStorage account_storage = new UserAccountStorage();
         DataStorage data_storage = new DataStorage();
-        OperationRegistryStorage registry_storage = new OperationRegistryStorage();
+
 
         [HttpGet]
         public ActionResult Login()
@@ -31,7 +28,7 @@ namespace EducationManager.Controllers.Account
             try
             {
                 if (string.IsNullOrEmpty(avm.Username) || string.IsNullOrEmpty(avm.Password) ||
-                !account_storage.UserAccounts.Any(u => u.Username.Equals(avm.Username) && u.Password.Equals(avm.Password)))
+                !data_storage.UserAccounts.Any(u => u.Username.Equals(avm.Username) && u.Password.Equals(avm.Password)))
                 {
                     ViewBag.Error = "Неверные данные";
                     return View(avm);
@@ -44,11 +41,11 @@ namespace EducationManager.Controllers.Account
             }
             //Аутентифицируем пользователя
             UserSession.Uinform = new UserInformation();
-            UserSession.Uinform.UserId = account_storage.UserAccounts.Where(
+            UserSession.Uinform.UserId = data_storage.UserAccounts.Where(
                 u => u.Username.Equals(avm.Username) && u.Password.Equals(avm.Password)).FirstOrDefault().UserId;
 
             //получили роль пользователя
-            string role = account_storage.UserAccounts.Where(u => u.UserId.Equals(UserSession.Uinform.UserId)).FirstOrDefault().Role;
+            string role = data_storage.UserAccounts.Where(u => u.UserId.Equals(UserSession.Uinform.UserId)).FirstOrDefault().Role;
             UserSession.Uinform.IsConfirmed = true;//Устанавливается значение по умолчанию
             //Проверка подтверждения пользователя
             if (role == "admin" && data_storage.Admins.Any(u => u.UserId.Equals(UserSession.Uinform.UserId)))
@@ -86,7 +83,7 @@ namespace EducationManager.Controllers.Account
         {
             if (username == "")
                 return false;
-            return !account_storage.UserAccounts.Any(a => a.Username.Equals(username));
+            return !data_storage.UserAccounts.Any(a => a.Username.Equals(username));
         }
 
         public ActionResult Registry()
@@ -102,16 +99,16 @@ namespace EducationManager.Controllers.Account
                 return View(rvm);
             }
 
-            account_storage.UserAccounts.Add(new UserAccount()
+            data_storage.UserAccounts.Add(new UserAccount()
             {
                 Username = rvm.Username,
                 Password = rvm.Password,
                 Role = rvm.Role,
                 Email = rvm.Email
             });
-            account_storage.SaveChanges();
+            data_storage.SaveChanges();
 
-            registry_storage.Users.Add(new OperationRegistryUser()
+            data_storage.Users.Add(new OperationRegistryUser()
             {
                 Addres = rvm.Addres,
                 ClassId = rvm.ClassId,
@@ -122,9 +119,9 @@ namespace EducationManager.Controllers.Account
                 Gender = rvm.Gender,
                 Role = rvm.Role,
                 SchoolId = rvm.SchoolId,
-                UserId = account_storage.UserAccounts.Where(u => u.Username.Equals(rvm.Username) && u.Password.Equals(rvm.Password)).First().UserId
+                UserId = data_storage.UserAccounts.Where(u => u.Username.Equals(rvm.Username) && u.Password.Equals(rvm.Password)).First().UserId
             });
-            registry_storage.SaveChanges();
+            data_storage.SaveChanges();
 
             return Redirect("~/Account/Login");
         }
@@ -138,16 +135,16 @@ namespace EducationManager.Controllers.Account
             if (!ModelState.IsValid)
                 return View(fp);
 
-            if (!account_storage.UserAccounts.Any(a => a.Username.Equals(fp.Username) &&
+            if (!data_storage.UserAccounts.Any(a => a.Username.Equals(fp.Username) &&
              a.Email.Equals(fp.Email)))
             {
                 ModelState.AddModelError("emailerror", "Проверте введенные данные");
                 return View();
             }
-            UserAccount account = account_storage.UserAccounts.Where(a => a.Username.Equals(fp.Username)).First();
+            UserAccount account = data_storage.UserAccounts.Where(a => a.Username.Equals(fp.Username)).First();
             account.Password = fp.NewPassword;
-            account_storage.Entry(account).State = System.Data.Entity.EntityState.Modified;
-            account_storage.SaveChangesAsync();
+            data_storage.Entry(account).State = System.Data.Entity.EntityState.Modified;
+            data_storage.SaveChangesAsync();
             return Redirect("../");
         }
 

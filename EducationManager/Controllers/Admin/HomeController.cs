@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using EducationManager.Security;
 using EducationManager.ViewModels.Admin;
+using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Admin
 {
     [CustomAuthorize(Roles = "admin")]
     public class AdminHomeController : Controller
     {
-        Models.DataModel.DataStorage data_storage = new Models.DataModel.DataStorage();
+        DataStorage data_storage = new DataStorage();
         // GET: Home
         public ActionResult Index()
         {

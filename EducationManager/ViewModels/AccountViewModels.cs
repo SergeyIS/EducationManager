@@ -1,10 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace EducationManager.ViewModels.Account
 {
+    public class AccountViewModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+    public class ForgotPasswordViewNodel
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string NewPassword { get; set; }
+    }
     public class RegistryViewModel
     {
         public string Username { get; set; }
@@ -20,4 +28,5 @@ namespace EducationManager.ViewModels.Account
         public string Gender { get; set; }
         public int SchoolId { get; set; }
     }
+
 }

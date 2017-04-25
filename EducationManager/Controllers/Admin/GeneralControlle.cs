@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using EducationManager.Security;
 using EducationManager.ViewModels.Admin;
-
+using EducationManager.DataModels;
 namespace EducationManager.Controllers.Admin
 {
     [CustomAuthorize(Roles = "admin")]
     public class AdminGeneralController : Controller
     {
-        Models.DataModel.DataStorage data_storage = new Models.DataModel.DataStorage();
+        DataStorage data_storage = new DataStorage();
         // GET: Home
         public ActionResult Index()
         {
@@ -25,9 +25,9 @@ namespace EducationManager.Controllers.Admin
         {
             if (!ModelState.IsValid)
                 return Content("Неверные данные");
-            Models.OperationRegistryData.OperationRegistryStorage registry_storage = new Models.OperationRegistryData.OperationRegistryStorage();
-            Models.DataModel.Teacher teacher = new Models.DataModel.Teacher();
-            Models.DataModel.Student student = new Models.DataModel.Student();
+
+            Teacher teacher = new Teacher();
+            Student student = new Student();
 
             if (dvm.Role == "teacher")
             {
@@ -38,7 +38,7 @@ namespace EducationManager.Controllers.Admin
                 teacher = t.First();
                 data_storage.Entry(teacher).State = System.Data.Entity.EntityState.Deleted;
                 data_storage.SaveChanges();
-                registry_storage.Users.Add(new Models.OperationRegistryData.OperationRegistryUser()
+                data_storage.Users.Add(new OperationRegistryUser()
                 {
                     Addres = data_storage.Addresses.Where(a => a.AddresId.Equals(teacher.AddresId)).First().AddresValue,
                     UserId = teacher.UserId,
@@ -51,7 +51,7 @@ namespace EducationManager.Controllers.Admin
                     Role = "teacher",
                     SchoolId = teacher.SchoolId
                 });
-                registry_storage.SaveChangesAsync();
+                data_storage.SaveChangesAsync();
             }
             else if (dvm.Role == "student")
             {
@@ -62,7 +62,7 @@ namespace EducationManager.Controllers.Admin
                 student = s.First();
                 data_storage.Entry(student).State = System.Data.Entity.EntityState.Deleted;
                 data_storage.SaveChanges();
-                registry_storage.Users.Add(new Models.OperationRegistryData.OperationRegistryUser()
+                data_storage.Users.Add(new OperationRegistryUser()
                 {
                     Addres = data_storage.Addresses.Where(a => a.AddresId.Equals(student.AddresId)).First().AddresValue,
                     UserId = student.UserId,
@@ -75,7 +75,7 @@ namespace EducationManager.Controllers.Admin
                     Role = "student",
                     SchoolId = student.SchoolId
                 });
-                registry_storage.SaveChangesAsync();
+                data_storage.SaveChangesAsync();
             }
             else
             {

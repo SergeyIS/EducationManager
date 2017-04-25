@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EducationManager.ViewModels.Admin;
-using EducationManager.Models.DataModel;
-using EducationManager.Models.OperationRegistryData;
+using EducationManager.DataModels;
 using EducationManager.Security;
 
 namespace EducationManager.Controllers.Admin
@@ -14,12 +13,11 @@ namespace EducationManager.Controllers.Admin
     public class AdminBidsController : Controller
     {
         DataStorage data_storage = new DataStorage();
-        OperationRegistryStorage registry_storage = new OperationRegistryStorage();
 
         public ActionResult Index()
         {
             List<BidViewModel> bids = new List<BidViewModel>();
-            foreach (var user in registry_storage.Users.Where(b => b.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)))
+            foreach (var user in data_storage.Users.Where(b => b.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)))
             {
                 bids.Add(new BidViewModel()
                 {
@@ -87,9 +85,9 @@ namespace EducationManager.Controllers.Admin
                         data_storage.SaveChanges();
                     }
                     //Удалить заявку из бд
-                    registry_storage.Users.Remove(
-                        registry_storage.Users.Where(u => u.UserId.Equals(bid.UserId)).First());
-                    registry_storage.SaveChanges();
+                    data_storage.Users.Remove(
+                        data_storage.Users.Where(u => u.UserId.Equals(bid.UserId)).First());
+                    data_storage.SaveChanges();
                 }
             }
             return Redirect("~/AdminBids/Index");
