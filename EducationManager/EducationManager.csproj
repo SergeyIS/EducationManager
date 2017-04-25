@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -94,10 +102,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Admin\BidsController.cs" />
+    <Compile Include="Controllers\Admin\ClassesController.cs" />
+    <Compile Include="Controllers\Admin\CoursesController.cs" />
+    <Compile Include="Controllers\Admin\GeneralControlle.cs" />
+    <Compile Include="Controllers\Admin\HomeController.cs" />
+    <Compile Include="Controllers\Admin\SubjectController.cs" />
+    <Compile Include="Controllers\Student\GradesController.cs" />
+    <Compile Include="Controllers\Student\HomeController.cs" />
+    <Compile Include="Controllers\Teacher\AssessmentController.cs" />
+    <Compile Include="Controllers\Teacher\CoursesController.cs" />
+    <Compile Include="Controllers\Teacher\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="DataModels\AccountModel\UserAccount.cs" />
+    <Compile Include="DataModels\AccountModel\UserAccountStorage.cs" />
+    <Compile Include="DataModels\DataModel\Address.cs" />
+    <Compile Include="DataModels\DataModel\Admin.cs" />
+    <Compile Include="DataModels\DataModel\Class.cs" />
+    <Compile Include="DataModels\DataModel\ClassCourses.cs" />
+    <Compile Include="DataModels\DataModel\Course.cs" />
+    <Compile Include="DataModels\DataModel\DataStorage.cs" />
+    <Compile Include="DataModels\DataModel\Grade.cs" />
+    <Compile Include="DataModels\DataModel\School.cs" />
+    <Compile Include="DataModels\DataModel\Student.cs" />
+    <Compile Include="DataModels\DataModel\Subject.cs" />
+    <Compile Include="DataModels\DataModel\Teacher.cs" />
+    <Compile Include="DataModels\OperationRegistryData\OperationRegistryStorage.cs" />
+    <Compile Include="DataModels\OperationRegistryData\OperationRegistryUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="Security\UserInformation.cs" />
+    <Compile Include="Security\UserSession.cs" />
+    <Compile Include="ViewModels\Account\AccountViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotPasswordViewNodel.cs" />
+    <Compile Include="ViewModels\Account\RegistryViewModel.cs" />
+    <Compile Include="ViewModels\Admin\BidViewModel.cs" />
+    <Compile Include="ViewModels\Admin\DeleteUserViewModel.cs" />
+    <Compile Include="ViewModels\Admin\FindResultViewModel.cs" />
+    <Compile Include="ViewModels\Student\ClassCourseViewModel.cs" />
+    <Compile Include="ViewModels\Student\ClassEditorViewModel.cs" />
+    <Compile Include="ViewModels\Student\ClassViewModel.cs" />
+    <Compile Include="ViewModels\Student\StudentGeneralViewModel.cs" />
+    <Compile Include="ViewModels\Student\StudentGradesViewModel.cs" />
+    <Compile Include="ViewModels\Student\StudentViewModel.cs" />
+    <Compile Include="ViewModels\Teacher\GradesViewModel.cs" />
+    <Compile Include="ViewModels\Teacher\ShowGradeViewModel.cs" />
+    <Compile Include="ViewModels\Teacher\TeacherGeneralViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -111,8 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
