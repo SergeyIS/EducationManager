@@ -131,17 +131,17 @@ namespace EducationManager.Controllers.Account
             return View();
         }
         [HttpPost]
-        public ActionResult ForgotPassword(ForgotPasswordViewNodel fp)
+        public ActionResult ForgotPassword(ForgotPasswordViewModel fp)
         {
             if (!ModelState.IsValid)
                 return View(fp);
 
-            if (!data_storage.UserAccounts.Any(a => a.Username.Equals(fp.Username) &&
-             a.Email.Equals(fp.Email)))
+
+            if (fp.AccessKey != "12345")
             {
-                ModelState.AddModelError("emailerror", "Проверте введенные данные");
-                return View();
+                return View(fp);
             }
+
             UserAccount account = data_storage.UserAccounts.Where(a => a.Username.Equals(fp.Username)).First();
             account.Password = fp.NewPassword;
             data_storage.Entry(account).State = System.Data.Entity.EntityState.Modified;
@@ -149,6 +149,10 @@ namespace EducationManager.Controllers.Account
             return Redirect("../");
         }
 
+        public ActionResult SendSecretKey(ForgotPasswordViewModel fp)
+        {
+            return View(fp);
+        }
         public ActionResult ErrorAccess(string str = "")
         {
             ViewBag.ErrorMessage = str;
