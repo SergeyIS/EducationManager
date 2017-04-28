@@ -5,7 +5,7 @@ namespace EducationManager.DataModels
     public class DataStorage : DbContext
     {
         public DbSet<UserAccount> UserAccounts { get; set; }
-        public DbSet<OperationRegistryUser> Users { get; set; }
+        public DbSet<OperationRegistryUser> TemporaryUsers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Subject> Subjects { get; set; }
@@ -17,7 +17,7 @@ namespace EducationManager.DataModels
         public DbSet<Admin> Admins { get; set; }
         public DbSet<ClassCourses> ClassCourses { get; set; }
 
-        public DataStorage() : base("")
+        public DataStorage() : base()
         {
 
         }

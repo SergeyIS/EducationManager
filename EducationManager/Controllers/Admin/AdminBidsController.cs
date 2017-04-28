@@ -17,7 +17,7 @@ namespace EducationManager.Controllers.Admin
         public ActionResult Index()
         {
             List<BidViewModel> bids = new List<BidViewModel>();
-            foreach (var user in data_storage.Users.Where(b => b.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)))
+            foreach (var user in data_storage.TemporaryUsers.Where(b => b.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)))
             {
                 bids.Add(new BidViewModel()
                 {
@@ -85,8 +85,8 @@ namespace EducationManager.Controllers.Admin
                         data_storage.SaveChanges();
                     }
                     //Удалить заявку из бд
-                    data_storage.Users.Remove(
-                        data_storage.Users.Where(u => u.UserId.Equals(bid.UserId)).First());
+                    data_storage.TemporaryUsers.Remove(
+                        data_storage.TemporaryUsers.Where(u => u.UserId.Equals(bid.UserId)).First());
                     data_storage.SaveChanges();
                 }
             }

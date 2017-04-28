@@ -9,48 +9,143 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
+    <title>Выполните вход</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+    <link href="~/Content/Styles/bootstrap.css" type="text/css" rel="stylesheet" />
+    <style type="text/css">
+        html{
+            color:white;
+            background-color:rgb(59,191,80);
+        }
+        body{
+            color:white;
+            background-color:rgb(59,191,80);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10%;   
+            width: 400px;
+            min-width: 200px;
+            max-width: 500px;
+        }
+        .acaption{
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14pt;
+            width: 150px;
+        }
+        .logo{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            width: 64px;
+            height: 64px;
+
+        }
+        .logo img{ 
+            width: 64px;
+            height: 64px;
+        }
+        .username{
+            background-color: white;
+            color: rgb(50,50,50);
+            border-radius: 5px;
+            width: 400px;
+            min-width: 200px;
+            max-width: 500px;
+        }
+        .password{
+            background-color: white;
+            color: rgb(50,50,50);
+            border-radius: 5px;
+            width: 400px;
+            min-width: 200px;
+            max-width: 500px;
+            margin-top: 8px;
+        }
+        .username img{
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+        }
+        .password img{
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+        }
+        .username input{
+            background-color: rgba(255,255,255, 0);
+            border: none;
+            width: 360px;
+            min-width: 160px;
+            max-width: 460px;
+            height:30px;
+            margin-left:auto;
+            margin-right: auto;
+        }
+         .password input{
+            background-color: rgba(255,255,255, 0);
+            border: none;
+            width: 360px;
+            min-width: 160px;
+            max-width: 460px;
+            height:30px;
+            margin-left:auto;
+            margin-right: auto;
+        }
+        .btn{
+            width: 400px;
+            min-width: 200px;
+            max-width: 500px;
+            margin-top: 8px;
+        }
+        .actions{
+            margin-top: 8px;
+        }
+        .actions a{
+            text-decoration:none;
+            color: white;
+        }
+        a:hover{
+            text-decoration: solid;
+            color: white;
+        }
+        .act_register{
+            float: left;
+        }
+        .act_forgot{
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     
-    
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>AccountViewModel</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-                </div>
+    <div class="acaption">
+        <p>Выполните вход</p>
+    </div>
+    <div class="logo">
+        <img src="~/Content/Icons/house_256.png" />
+    </div>
+    <div class="controllers">
+        @using (Html.BeginForm("login", "account", FormMethod.Post))
+        {
+            <div class="username">
+                <img src="~/Content/Icons/user_64.png" />
+                @Html.TextBoxFor(m => m.Username)
             </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
+            <div class="password">
+                <img src="~/Content/Icons/key_64.png" />
+                @Html.PasswordFor(m => m.Password)
             </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
+            <button type="submit" value="enter" class="btn btn-primary">Войти</button>
+            <div class="actions">
+                <a href="~/account/register" class="act_register">Зарегистрироваться</a>
+                <a href="~/account/forgotpassword" class="act_forgot">Забыли пароль?</a>
             </div>
-        </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
+        }       
     </div>
 </body>
 </html>

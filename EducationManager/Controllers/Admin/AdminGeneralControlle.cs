@@ -38,7 +38,7 @@ namespace EducationManager.Controllers.Admin
                 teacher = t.First();
                 data_storage.Entry(teacher).State = System.Data.Entity.EntityState.Deleted;
                 data_storage.SaveChanges();
-                data_storage.Users.Add(new OperationRegistryUser()
+                data_storage.TemporaryUsers.Add(new OperationRegistryUser()
                 {
                     Addres = data_storage.Addresses.Where(a => a.AddresId.Equals(teacher.AddresId)).First().AddresValue,
                     UserId = teacher.UserId,
@@ -62,7 +62,7 @@ namespace EducationManager.Controllers.Admin
                 student = s.First();
                 data_storage.Entry(student).State = System.Data.Entity.EntityState.Deleted;
                 data_storage.SaveChanges();
-                data_storage.Users.Add(new OperationRegistryUser()
+                data_storage.TemporaryUsers.Add(new OperationRegistryUser()
                 {
                     Addres = data_storage.Addresses.Where(a => a.AddresId.Equals(student.AddresId)).First().AddresValue,
                     UserId = student.UserId,

@@ -97,11 +97,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Icons\house_256.png" />
+    <Content Include="Content\Icons\key_64.png" />
+    <Content Include="Content\Icons\user_64.png" />
+    <Content Include="Content\Styles\bootstrap-theme.css" />
+    <Content Include="Content\Styles\bootstrap-theme.min.css" />
+    <Content Include="Content\Styles\bootstrap.css" />
+    <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Styles\bootstrap-theme.css.map" />
+    <Content Include="Content\Styles\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Styles\bootstrap.css.map" />
+    <Content Include="Content\Styles\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -111,17 +133,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
-    <Compile Include="Controllers\Admin\BidsController.cs" />
-    <Compile Include="Controllers\Admin\ClassesController.cs" />
-    <Compile Include="Controllers\Admin\CoursesController.cs" />
-    <Compile Include="Controllers\Admin\GeneralControlle.cs" />
-    <Compile Include="Controllers\Admin\HomeController.cs" />
-    <Compile Include="Controllers\Admin\SubjectController.cs" />
-    <Compile Include="Controllers\Student\GradesController.cs" />
-    <Compile Include="Controllers\Student\HomeController.cs" />
-    <Compile Include="Controllers\Teacher\AssessmentController.cs" />
-    <Compile Include="Controllers\Teacher\CoursesController.cs" />
-    <Compile Include="Controllers\Teacher\HomeController.cs" />
+    <Compile Include="Controllers\Admin\AdminBidsController.cs" />
+    <Compile Include="Controllers\Admin\AdminClassesController.cs" />
+    <Compile Include="Controllers\Admin\AdminCoursesController.cs" />
+    <Compile Include="Controllers\Admin\AdminGeneralControlle.cs" />
+    <Compile Include="Controllers\Admin\AdminHomeController.cs" />
+    <Compile Include="Controllers\Admin\AdminSubjectController.cs" />
+    <Compile Include="Controllers\Student\StudentGradesController.cs" />
+    <Compile Include="Controllers\Student\StudentHomeController.cs" />
+    <Compile Include="Controllers\Teacher\TeacherAssessmentController.cs" />
+    <Compile Include="Controllers\Teacher\TeacherCoursesController.cs" />
+    <Compile Include="Controllers\Teacher\TeacherHomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -140,6 +162,9 @@
     <Content Include="packages.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_StudentLayout.cshtml" />
+    <Content Include="Views\Shared\_TeacherLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

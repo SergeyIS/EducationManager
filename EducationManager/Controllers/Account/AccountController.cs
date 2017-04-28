@@ -108,7 +108,7 @@ namespace EducationManager.Controllers.Account
             });
             data_storage.SaveChanges();
 
-            data_storage.Users.Add(new OperationRegistryUser()
+            data_storage.TemporaryUsers.Add(new OperationRegistryUser()
             {
                 Addres = rvm.Addres,
                 ClassId = rvm.ClassId,
