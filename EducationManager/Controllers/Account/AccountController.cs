@@ -93,6 +93,7 @@ namespace EducationManager.Controllers.Account
         [HttpPost]
         public ActionResult Registry(RegistryViewModel rvm)
         {
+            return View();
             //Проверка модели и username на предмет вхождения логина в базу
             if (!ModelState.IsValid || !CheckUsername(rvm.Username))
             {

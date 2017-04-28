@@ -1,0 +1,187 @@
+﻿@model EducationManager.ViewModels.Account.RegistryViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Регистрация</title>
+    <link href="~/Content/Styles/bootstrap.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(59,191,80);
+        }
+        .content{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            width: 460px;
+            background-color: white;
+            padding: 20px 50px;
+        }
+        .content table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td{
+            padding: 0px 5px;
+        }
+        .form-control{
+            margin-top: 8px;
+            height: 30px;
+        }
+        .acaption {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 16pt;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .send_button{
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        button{
+            width: 300px;
+        }
+    </style>
+    <div class="content">
+        @using (Html.BeginForm("Registry", "Account"))
+        {
+            <div class="acaption">
+                <p>Заполните форму</p>
+            </div>
+            <div class="controllers">
+                <table>
+                    <tr>
+                        <td>
+                            <label>Логин</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m=>m.Username, new { @class= "form-control", placeholder= "Введите логин" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>e-mail</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Введите email" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Пароль</label>
+                        </td>
+                        <td>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Введите пароль" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Кто вы?</label>
+                        </td>
+                        <td>
+                            <select name="Role" class="form-control">
+                                <option value="student">Ученик</option>
+                                <option value="teacher">Преподаватель</option>
+                                <option value="admin">Администратор</option>
+                                <option value="parents">Родитель</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Пол</label>
+                        </td>
+                        <td>
+                            <select name="Gender" class="form-control">
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                                <option value="notdef">Не указывать</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Ваше имя</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Как вас зовут?" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Отчество</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control", placeholder = "Ваше отчество" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Фамилия</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Укажите фамилию" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Дата рождения</label>
+                        </td>
+                        <td>
+                            <input type="date" name="DateOfBirth" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Адрес</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m=>m.Addres, new { @class = "form-control", placeholder = "Укажите ваш адрес" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>ID класса</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.ClassId, new { @class = "form-control", placeholder = "Идентификатор класса" })
+                        </td>
+                    <tr>
+                        <td>
+                            <label>ID школы</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.SchoolId, new { @class = "form-control", placeholder = "Идентификатор школы " })
+                        </td>
+                    </tr>
+                </table>
+                <div class="send_button">
+                    <button class="btn btn-primary">Отправить</button>
+                </div>
+                </div>
+                
+
+            
+        }
+        
+        
+    </div>        
+    
+</body>
+</html>
