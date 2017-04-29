@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.TitlePage = "Оценки";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+<div class="chose-course-bar">
+    <div style="text-align:center; font-size: 16px; font-weight: bold; padding: 10px;">Выберите курс</div>
+    <select class="form-control">
+        <option>Дифференциальные уравнения</option>
+        <option>Иностранный язык</option>
+        <option>Фрактальная геометрия</option>
+        <option>Вычислителительная математика</option>
+    </select>
+    <label>Начальная дата</label>
+    <input type="date" class="form-control"/>
+    <label>Конечная дата</label>
+    <input type="date" class="form-control"/>
+    <input type="button" value="Посмотреть" class="btn btn-primary"/>
+</div>
+<div class="grades-table">
+    <table class="table">
+        <caption>Название предмета</caption>
+        <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Оценка</th>
+                <th>Пропуск</th>
+                <th>Примечание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < 20; i++)
+            {
+                <tr>
+                    <td>11.01.2015</td>
+                    <td >
+                        <div class="marks">5</div>
+                    </td>
+                    <td class="absence">нет</td>
+                    <td class="note">Заметка учителя</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="report">
+        <p>Средний балл: 5</p>
+        <p>Занятий пропущенно: 0</p>
+    </div>
+</div>
+

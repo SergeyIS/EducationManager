@@ -1,7 +1,27 @@
-﻿.navbar {
+﻿html{
+     min-width: 931px;
+}
+/*StudentLayout*/
+.navbar {
     background-color: rgb(59,191,80);
     height: 50px;
     padding-right: 10px;
+}
+.footer-bottom{
+    border-radius: 0px;
+    background-color: rgb(59,191,80);
+    height: 50px;
+}
+.footer-bottom p{
+    float: left;
+    margin: 15px 0;
+    color: white;
+    margin-left: 20px;
+}
+.footer-bottom a{
+    float: right;
+    margin: 15px 0;
+    margin-right: 20px;
 }
 .menu img{
     height: 20px;
@@ -37,9 +57,8 @@ a:hover{
     padding: 50px 20px;
     background-color: rgb(221, 246, 219);
 }
-html{
-    background-color: rgb(221, 246, 219);
-}
+
+/*StudentHome*/
 .welcome{
     background-color: white;
     margin-top: 20px;
@@ -96,4 +115,68 @@ td.table-content{
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/*StudentGrades*/
+.chose-course-bar{
+    display: inline-block;
+    height: 85vh;
+    width: 350px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    padding: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);  
+}
+.grades-table{
+    display: inline-block;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);
+    min-width: 300px;
+    max-width: 500px;
+    height: 85vh;
+    vertical-align: top;
+    overflow: auto;
+}
+.chose-course-bar label{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.chose-course-bar .btn{
+    width: 330px;
+    margin-top: 20px;
+}
+.table .note{
+    color: rgb(100,100,100);
+    font-size: 11px;
+}
+.table .marks{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    text-align:center;
+    background-color: rgba(59,191,80, 0.3);
+    background-color: rgba(255, 0, 0, 0.30);
+    background-color: rgba(0, 99, 255, 0.30);
+    background-color: rgba(255, 215, 26, 0.30);
+}
+.table caption{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    color: rgb(50,50,50);
+}
+
+
+.report{
+    background-color: rgba(200,200,200, 0.5);
+    height: 80px;
+    color: rgb(50,50,50);
+    font-weight:bold;
+    font-size: 14px;
+    padding: 15px 10px;
 }

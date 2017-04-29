@@ -16,6 +16,8 @@ namespace EducationManager.Controllers
         // GET: Student
         public ActionResult Index()
         {
+            return View();//Для разработки интерфейса
+
             List<SelectListItem> list = new List<SelectListItem>();
             SelectListItem item;
             List<Course> courses = new List<Course>();

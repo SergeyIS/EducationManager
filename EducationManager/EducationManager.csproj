@@ -182,6 +182,8 @@
     <Content Include="Views\Account\SendSecretKey.cshtml" />
     <Content Include="Views\Test\Start.cshtml" />
     <Content Include="Views\StudentHome\Index.cshtml" />
+    <Content Include="Views\StudentGrades\Index.cshtml" />
+    <Content Include="Views\TeacherHome\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
