@@ -97,14 +97,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Icons\exit_32.png" />
+    <Content Include="Content\Icons\gradeslist_32.png" />
     <Content Include="Content\Icons\house_256.png" />
+    <Content Include="Content\Icons\house_32.png" />
     <Content Include="Content\Icons\key_64.png" />
     <Content Include="Content\Icons\loading_infinity.gif" />
     <Content Include="Content\Icons\user_64.png" />
+    <Content Include="Content\Styles\AStyle.css" />
     <Content Include="Content\Styles\bootstrap-theme.css" />
     <Content Include="Content\Styles\bootstrap-theme.min.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap.min.css" />
+    <Content Include="Content\Styles\SStyle.css" />
+    <Content Include="Content\Styles\TStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -118,6 +124,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -147,6 +155,7 @@
     <Compile Include="Controllers\Teacher\TeacherAssessmentController.cs" />
     <Compile Include="Controllers\Teacher\TeacherCoursesController.cs" />
     <Compile Include="Controllers\Teacher\TeacherHomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +180,8 @@
     <Content Include="Views\Account\Registry.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\SendSecretKey.cshtml" />
+    <Content Include="Views\Test\Start.cshtml" />
+    <Content Include="Views\StudentHome\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

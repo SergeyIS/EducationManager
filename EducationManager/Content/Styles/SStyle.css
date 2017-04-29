@@ -1,0 +1,99 @@
+﻿.navbar {
+    background-color: rgb(59,191,80);
+    height: 50px;
+    padding-right: 10px;
+}
+.menu img{
+    height: 20px;
+    width: 20px;
+}
+.menu{
+    display: inline;
+    height: 50px;
+    padding: 10px 5px;
+    margin-left: 10px;
+}
+.menu:hover{
+    background-color: rgb(59,166,80);
+}
+.menu-exit{
+    float: right;
+}
+.menu-home{
+    float: left;
+}
+.menu-showgrades{
+    float: left;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+.content{
+    padding: 50px 20px;
+    background-color: rgb(221, 246, 219);
+}
+html{
+    background-color: rgb(221, 246, 219);
+}
+.welcome{
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);  
+}
+.announcements{
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);  
+}
+.date{
+    padding: 5px 5px 5px 71px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.news{
+
+}
+td.table-date{
+    padding: 2px 5px;
+    color: rgb(110, 110, 110);
+}
+td.table-content{
+    padding: 2px 5px;
+}
+.show-more{
+    padding: 10px 5px 5px 71px;  
+}
+.show-more a{
+    color: rgb(50, 50, 50);
+    font-size: 14px;
+    font-weight: bold;
+}
+.show-more a:hover{
+    color: rgb(59,166,80);
+}
+.statistic{
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);
+}
+.head{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.graphs{
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,133 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.TitlePage = "Домашняя страница";
+}
+
+
+<div class="welcome">
+    <h3>Здравствуйте, Иван Иванович.</h3>
+    <p>Вы прикреплены к школе: ****</p>
+</div>
+<div class="announcements">
+    <div class="date">
+        <p>29 апреля, суббота</p>
+    </div>
+    <div class="news">
+        <table>
+            <tr class="table-message">
+                <td class="table-date">29.04.17</td>
+                <td class="table-content">
+                    Элон Маск показал принцип работы его будущего тоннеля под Лос-Анджелесом
+                </td>
+            </tr>
+            <tr class="table-message">
+                <td class="table-date">27.04.17</td>
+                <td class="table-content">
+                    «Первый канал» перестал публиковать финансовую годовую отчетность из-за смены формы собственности
+                </td>
+            </tr>
+        </table>
+        <div class="show-more">
+            <a href="#">Показать еще</a>
+        </div>
+    </div>
+</div>
+
+<div class="statistic">
+    <div class="head">Сататистика успеваемости</div>
+    <div class="graphs">
+        <canvas id="LineChart"></canvas>
+    </div>
+    <div class="graphs">
+        <canvas id="BarChart"></canvas>
+    </div>
+</div>
+
+<script src="~/Scripts/Chart.js"></script>
+<script>
+        var ctx = document.getElementById("LineChart");
+
+        var mydata = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "Ваши успехи",
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.1,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    spanGaps: false,
+                }
+            ]
+        };
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: mydata,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+</script>
+<script>
+    var data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+            {
+                label: "My First dataset",
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1,
+                data: [65, 59, 80, 81, 56, 55, 40],
+            }
+        ]
+    };
+    var ctx = document.getElementById("BarChart");
+    var myBarChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: data,
+        options: {
+        scales: {
+        xAxes: [{
+        stacked: true
+    }],
+        yAxes: [{
+    stacked: true
+    }]
+    }
+    }
+    });
+</script>

@@ -9,7 +9,7 @@ using EducationManager.Security;
 
 namespace EducationManager.Controllers
 {
-    [CustomAuthorize(Roles = "student")]
+    //[CustomAuthorize(Roles = "student")]
     public class StudentGradesController : Controller
     {
         DataStorage data_storage = new DataStorage();
