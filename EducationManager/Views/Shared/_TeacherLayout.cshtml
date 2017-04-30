@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -8,10 +7,37 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_TeacherLayout</title>
+    <title>@ViewBag.TitlePage</title>
+    <link href="~/Content/Styles/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/PageStyles/GeneralStyles.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/PageStyles/TeacherStyles.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <div> 
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="menu menu-home">
+            <img src="~/Content/Icons/house_32.png" />
+            <a href="#">Домой</a>
+        </div>
+        <div class="menu menu-showgrades">
+            <img src="~/Content/Icons/books_32.png" />
+            <a href="#">Мои курсы</a>
+        </div>
+        <div class="menu menu-exit">
+            <img src="~/Content/Icons/exit_32.png" />
+            <a href="#">Выйти</a>
+        </div>
+    </nav>
+    <div class="content">
+        @RenderBody()
     </div>
+    <footer class="footer-bottom">
+        <p>&copy; Education Manager</p>
+        <a href="#">О приложении</a>
+    </footer>
 </body>
 </html>

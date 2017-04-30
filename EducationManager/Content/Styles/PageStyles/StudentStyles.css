@@ -1,0 +1,97 @@
+﻿/*student home*/
+.date{
+    padding: 5px 5px 5px 71px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.news{
+
+}
+td.table-date{
+    padding: 2px 5px;
+    color: rgb(110, 110, 110);
+}
+td.table-content{
+    padding: 2px 5px;
+}
+.show-more{
+    padding: 10px 5px 5px 71px;  
+}
+.show-more a{
+    color: rgb(50, 50, 50);
+    font-size: 14px;
+    font-weight: bold;
+}
+.show-more a:hover{
+    color: rgb(59,166,80);
+}
+
+.head{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.graphs{
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*student grades*/
+.chose-course-bar{
+    display: inline-block;
+    height: 85vh;
+    width: 350px;
+    margin-top: 20px;
+}
+.grades-table{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    min-width: 600px;
+    max-width: 800px;
+    height: 85vh;
+    vertical-align: top;
+    overflow: auto;
+}
+.chose-course-bar label{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.chose-course-bar .btn{
+    width: 330px;
+    margin-top: 20px;
+}
+.table .note{
+    color: rgb(100,100,100);
+    font-size: 11px;
+}
+.table .marks{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    text-align:center;
+    background-color: rgba(59,191,80, 0.3);
+    background-color: rgba(255, 0, 0, 0.30);
+    background-color: rgba(0, 99, 255, 0.30);
+    background-color: rgba(255, 215, 26, 0.30);
+}
+.table caption{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    color: rgb(50,50,50);
+}
+.report{
+    background-color: rgba(200,200,200, 0.5);
+    height: 80px;
+    color: rgb(50,50,50);
+    font-weight:bold;
+    font-size: 14px;
+    padding: 15px 10px;
+}

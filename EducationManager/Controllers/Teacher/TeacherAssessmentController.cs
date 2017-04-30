@@ -9,7 +9,7 @@ using EducationManager.ViewModels.Teacher;
 
 namespace EducationManager.Controllers.Teachers
 {
-    [CustomAuthorize(Roles = "teacher")]
+    //[CustomAuthorize(Roles = "teacher")]
     public class TeacherAssessmentController : Controller
     {
         DataStorage data_storage = new DataStorage();

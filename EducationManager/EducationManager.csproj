@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Icons\books_32.png" />
     <Content Include="Content\Icons\exit_32.png" />
     <Content Include="Content\Icons\gradeslist_32.png" />
     <Content Include="Content\Icons\house_256.png" />
@@ -104,13 +105,15 @@
     <Content Include="Content\Icons\key_64.png" />
     <Content Include="Content\Icons\loading_infinity.gif" />
     <Content Include="Content\Icons\user_64.png" />
-    <Content Include="Content\Styles\AStyle.css" />
+    <Content Include="Content\Styles\PageStyles\AStyle.css" />
     <Content Include="Content\Styles\bootstrap-theme.css" />
     <Content Include="Content\Styles\bootstrap-theme.min.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap.min.css" />
-    <Content Include="Content\Styles\SStyle.css" />
-    <Content Include="Content\Styles\TStyle.css" />
+    <Content Include="Content\Styles\PageStyles\GeneralStyles.css" />
+    <Content Include="Content\Styles\PageStyles\SStyle.css" />
+    <Content Include="Content\Styles\PageStyles\StudentStyles.css" />
+    <Content Include="Content\Styles\PageStyles\TeacherStyles.css" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -184,6 +187,7 @@
     <Content Include="Views\StudentHome\Index.cshtml" />
     <Content Include="Views\StudentGrades\Index.cshtml" />
     <Content Include="Views\TeacherHome\Index.cshtml" />
+    <Content Include="Views\TeacherCourses\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

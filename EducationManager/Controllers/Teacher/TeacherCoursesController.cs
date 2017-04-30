@@ -8,13 +8,14 @@ using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Teachers
 {
-    [CustomAuthorize(Roles = "teacher")]
+    //[CustomAuthorize(Roles = "teacher")]
     public class TeacherCoursesController : Controller
     {
         DataStorage data_storage = new DataStorage();
 
         public ActionResult Index()
         {
+            return View(new object());//Заглушка для создания пользовательского интерфейса
             List<Course> courses = new List<Course>();
             //запрос к базе данных.
             var _courses = data_storage.Courses.Where(c => c.TeacherId.Equals(UserSession.Uinform.Teacher.TeacherId));

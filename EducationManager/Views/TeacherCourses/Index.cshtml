@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.TitlePage = "Мои курсы";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<div class="left-content">
+    <div class="block-element courses">
+        <div class="acaption">Ваши курсы</div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID Курса</th>
+                    <th>ID Предмета</th>
+                    <th>Название курса</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 20; i++)
+            {
+                    <tr>
+                        <td>937</td>
+                        <td>137</td>
+                        <td>Вычислительная математика[Иванов И.С]</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="right-content">
+    <div class="block-element action-chose-class">
+        <div class="acaption">Выберите класс</div>
+        <div name="courseid" hidden>course_id:wjdn3</div>
+        <select class="form-control">
+            <option value="123">6A</option>
+            <option value="234">11B</option>
+            <option value="345">9C</option>
+        </select>
+        <div class="button-group">
+            <button type="submit" name="putgrades" value="put" class="btn btn-primary left">Поставить оценки</button>
+            <button type="submit" name="showgrades" value="show" class="btn btn-primary right">Посмотреть оценки</button>
+        </div>
+    </div>
+    <div class="block-element action-putgrades">
+        <div class="acaption">Поставить оценки</div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Ученик</th>
+                    <th>Оценка</th>
+                    <th>Дата</th>
+                    <th>Примечание</th>
+                </tr>  
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 10; i++)
+                {
+                    <tr>
+                        <td>Иванов И.С.</td>
+                        <td>
+                            <select name="grade" class="form-control">
+                                <option value="2">неуд.</option>
+                                <option value="3">удвл.</option>
+                                <option value="4">хор.</option>
+                                <option value="5">отл.</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input name="date" type="date" class="form-control" />
+                        </td>
+                        <td>
+                            <textarea name="note"
+                                      class="form-control" style="height:34px; max-height: 100px; max-width: 300px; overflow: hidden"
+                                      placeholder="Здесь примечание"></textarea>
+                        </td>
+                    </tr>
+                }
+               
+            </tbody>
+        </table>
+        <div class="putgrade-button-group">
+            <button type="submit" name="putgrades" value="put" class="btn btn-primary putgrade-button"
+                    style="margin:auto auto;">Поставить оценки</button>
+        </div>
+    </div>
+    <div class="block-element action-showgrades" hidden>
+        <div class="acaption">Посмотреть оценки</div>
+        <div class="">
+            <table>
+                <tr>
+                    <td><label>Начальная дата</label></td>
+                    <td><label>Конечная дата</label></td>
+                </tr>
+                <tr>
+                    <td><input name="start_date" type="date" class="form-control"/></td>
+                    <td><input  name="end_date" type="date" class="form-control"/></td>
+                </tr>
+            </table> 
+            <div class="button-show">
+                <button class="btn btn-primary">Показать</button>
+            </div>
+            <div class="grades-table">
+
+            </div>     
+        </div>
+    </div>
+</div>
+
+

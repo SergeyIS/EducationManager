@@ -1,0 +1,114 @@
+﻿/*teacher home*/
+.action-announcements{
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+    min-height: 300px;
+}
+.action-announcements textarea{
+    margin-top:10px;
+    max-width: 480px;
+    max-height: 150px;
+    min-height: 50px;
+}
+.action-announcements .form-control{
+    margin-top: 10px;
+}
+.action-write{
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+    min-height: 300px;
+}
+.action-write textarea{
+    margin-top:10px;
+    max-width: 480px;
+    max-height: 150px;
+    min-height: 50px;
+}
+.acaption{
+    color: rgb(50,50,50);
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.action-announcements-button{
+    margin-top: 20px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.action-announcements button{
+    width: 400px;
+}
+.action-write button{
+    width: 400px;
+}
+.action-write .form-control{
+    margin-top: 10px;
+}
+/*teacher courses*/
+.left-content{
+    display:inline-block;
+    vertical-align: top;
+}
+.right-content{
+    display:inline-block;
+    vertical-align: top;
+}
+.courses table{
+    width: 500px;
+}
+.action-chose-class{
+    width: 400px;
+    height: 150px;
+}
+.action-chose-class .form-control{
+    margin: 20px 0;
+}
+.action-chose-class .left{
+    float: left;
+    width: 180px;
+}
+.action-chose-class .right{
+    float: right;
+    width: 180px;
+}
+.action-putgrades{
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);
+}
+.action-putgrades table tr td{
+    padding: 5px 5px;
+}
+.putgrade-button-group{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.putgrade-button{
+    width: 300px;
+
+}
+.action-showgrades{
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);
+}
+.action-showgrades table{
+    width: 380px;
+    text-align: center;
+}
+.action-showgrades button{
+    width: 300px;
+}
+.button-show{
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right:auto;
+}
