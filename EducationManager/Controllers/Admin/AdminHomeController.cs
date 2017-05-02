@@ -9,13 +9,14 @@ using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Admin
 {
-    [CustomAuthorize(Roles = "admin")]
+    //[CustomAuthorize(Roles = "admin")]
     public class AdminHomeController : Controller
     {
         DataStorage data_storage = new DataStorage();
         // GET: Home
         public ActionResult Index()
         {
+            return View();//Для проектирования пользовательского интерфейса
             ViewBag.About = UserSession.Uinform.Admin;
             ViewBag.School = data_storage.Schools.Where(s => s.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)).First();
             return View();

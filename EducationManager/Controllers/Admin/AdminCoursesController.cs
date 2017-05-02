@@ -8,7 +8,7 @@ using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Admin
 {
-    [CustomAuthorize(Roles = "admin")]
+    //[CustomAuthorize(Roles = "admin")]
     public class AdminCoursesController : Controller
     {
         DataStorage data_storage = new DataStorage();

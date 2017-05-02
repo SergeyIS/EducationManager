@@ -1,0 +1,53 @@
+﻿@model EducationManager.ViewModels.Admin.BidViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="block-element bids-box">
+    <div class="acaption">Заявки</div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <td>Имя</td>
+                <td>Отчество</td>
+                <td>Фамилия</td>
+                <td>Дата рождения</td>
+                <td>Пол</td>
+                <td>Роль</td>
+                <td>ID класса</td>
+                <td>Адрес</td>
+                <td>Подтвержден</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < 1000; i++)
+            {
+            <tr>
+                
+                    @using(Ajax.BeginForm("", "", null))
+                    {
+                        <td>Иван</td>
+                        <td>Иванович</td>
+                        <td>Иванов</td>
+                        <td>01.01.2015</td>
+                        <td>мужской</td>
+                        <td>ученик</td>
+                        <td>1314</td>
+                        <td>Адрес</td>
+                        <td>
+                            <input type="image" src="~/Content/Icons/checked_32.png" class="accept-button"/>
+                            @*<button type="" value="accept" class="accept-button">
+                                <img src="~/Content/Icons/checked_32.png" style="width: 20px; height: 20px"/>
+                            </button>*@
+                            <input type="image" src="~/Content/Icons/cancel_32.png" class="cancel-button" />
+                            @*<button value="cancel" class="cancel-button">
+                                <img src="~/Content/Icons/cancel_32.png" style="width: 20px; height: 20px" />
+                            </button>*@
+                        </td>
+                    }
+             
+            </tr>
+            }
+        </tbody>    
+    </table>
+</div>

@@ -1,0 +1,65 @@
+﻿/*фиксированная минимальная ширина
+для навигационной панели*/
+.navbar{
+    min-width: 650px;
+}
+.main{
+    display: inline-block;
+}
+.search-panel{
+    display: inline-block;
+    float: right;
+    width: 300px;
+    min-height: 100px;
+}
+.acaption{
+    color: rgb(50,50,50);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*Search елемент*/
+.search-element{
+}
+.search-input{
+    display: inline-block;
+    width: 230px;
+    height: 30px;border: 2px solid rgb(59,191,80);
+    border: 2px solid rgb(59,191,80);
+    margin:0;
+}
+.search-button{
+    display: inline-block;
+    width: 40px;
+    height: 31px;
+    background-color: rgb(59,191,80);
+    margin:0;
+}
+.search-button img{
+    height: 20px;
+    width: 20px;
+}
+.search-results{
+    margin-top: 20px;
+    background-color: rgba(200,200,200, 0.5);
+    border-radius: 2px;
+}
+.accept-button{
+    width: 16px; height: 16px
+}
+.accept-button:hover{
+    width: 20px; height: 20px
+}
+.cancel-button{
+     width: 16px; height: 16px
+}
+.cancel-button:hover{
+    width: 20px; height: 20px
+}
+.table{
+    overflow:auto;
+}
+.bids-box{
+    min-width: 700px;
+}

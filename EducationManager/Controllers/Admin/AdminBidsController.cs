@@ -9,13 +9,16 @@ using EducationManager.Security;
 
 namespace EducationManager.Controllers.Admin
 {
-    [CustomAuthorize(Roles = "admin")]
+    //[CustomAuthorize(Roles = "admin")]
     public class AdminBidsController : Controller
     {
         DataStorage data_storage = new DataStorage();
 
         public ActionResult Index()
         {
+            return View(); //Для тестирования пользовательского итерфейса
+
+
             List<BidViewModel> bids = new List<BidViewModel>();
             foreach (var user in data_storage.TemporaryUsers.Where(b => b.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)))
             {

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.TitlePage = "Домашняя";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main">
+    <div class="block-element">
+        <h3>Здравствуйте, Иван Иванович.</h3>
+        <p>Приступайте к работе. За вами закреплено учебное заведение: "Название учебого заведения"</p>
+    </div>
+</div>
+<div class="search-panel block-element">
+    <div class="acaption">Поиск</div>
+    <div class="search-element">
+        <input type="text" name="name" class="search-input" placeholder="Введите полное имя"/>
+        <button type="submit" class="search-button">
+            <img src="~/Content/Icons/search_32.png"/>
+        </button>
+        <div class="search-results">
+            <div class="acaption">Результаты поиска</div>
+            <p style="text-align:center; font-size:16px">...</p>
+        </div>
+    </div>
+</div>
