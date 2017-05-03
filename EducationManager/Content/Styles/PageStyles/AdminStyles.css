@@ -102,3 +102,9 @@
     max-height: 85vh;
     margin-bottom: 20px;
 }
+/*admin courses*/
+.course-description{
+    width: 300px;
+    color: rgb(50,50,50);
+    font-size: 12px;
+}

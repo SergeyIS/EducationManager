@@ -6,15 +6,32 @@
 <div class="block-element">
     <div class="acaption">Курсы</div>
     <div class="courses-box">
-        <table>
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <td>ID курса</td>
                     <td>Название</td>
                     <td>Предмет</td>
                     <td>Преподаватели</td>
+                    <td>Описание</td>
                 </tr>
             </thead>
+            <tbody>
+                @for (int i = 0; i < 10; i++)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>Computer Science</td>
+                        <td>Информатика</td>
+                        <td>Иванов И.С.</td>
+                        <td class="course-description">описание курса</td>
+                    </tr>
+                }
+                
+            </tbody>
         </table>
+    </div>
+    <div class="add-course-button">
+        <button class="btn btn-primary">Добавить курс</button>
     </div>
 </div>
