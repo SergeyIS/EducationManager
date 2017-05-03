@@ -10,13 +10,15 @@ using EducationManager.DataModels;
 
 namespace EducationManager.Controllers.Admin
 {
-    [CustomAuthorize(Roles = "admin")]
+    //[CustomAuthorize(Roles = "admin")]
     public class AdminClassesController : Controller
     {
         DataStorage data_storage = new DataStorage();
         //Отображает все классы в данной школе
         public ActionResult Index()
         {
+            return View();//Для разработки пользовательского интерфейса
+
             List<ClassViewModel> classes = new List<ClassViewModel>();
             foreach (var item in data_storage.Classes.Where(c => c.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId)))
             {
@@ -54,6 +56,8 @@ namespace EducationManager.Controllers.Admin
         //Редактирует класс
         public ActionResult EditClass(int id)
         {
+            return View();//для тестирования пользовательского интерфейса
+
             if (!(data_storage.Classes.Any(c => c.ClassId.Equals(id) && c.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId))))
                 return Redirect("/Account/ErrorAccess?str=такого%20класс%20не%20существует,%20либо%20вы%20не%20имеете%20к%20ниму%20доступа.");
 

@@ -15,6 +15,8 @@ namespace EducationManager.Controllers.Admin
         // GET: Courses
         public ActionResult Index()
         {
+            return View();//для разработки пользовательского интерфейса
+
             ViewBag.Courses = data_storage.Courses.Where(c => c.SchoolId.Equals(UserSession.Uinform.Admin.SchoolId));
             return View();
         }

@@ -63,3 +63,42 @@
 .bids-box{
     min-width: 700px;
 }
+/*admin edit classes*/
+.left-content{
+    display: inline-block;
+}
+.right-content{
+    display: inline-block;
+    vertical-align: top;
+}
+.button-group{
+    width: 350px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.left-button{
+    float: left;
+    width: 150px;
+}
+.right-button{
+    float: right;
+    width: 150px;
+}
+.classes-box{
+   width: 400px;
+    overflow:auto;
+    max-height: 85vh;
+    margin-bottom: 20px;
+}
+.students-box{
+    max-width: 450px;
+    max-height: 70.7vh;
+    overflow: auto;
+}
+.student-courses{
+    max-width: 450px;
+    overflow:auto;
+    max-height: 85vh;
+    margin-bottom: 20px;
+}

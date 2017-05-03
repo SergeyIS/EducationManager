@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="left-content">
+    <div class="block-element about-class">
+        <div class="acaption">О классе</div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Название</td>
+                    <td>От</td>
+                    <td>До</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>927</label>
+                    </td>
+                    <td>
+                        <label>8A</label>
+                    </td>
+                    <td>
+                        <label>01.02.2005</label>
+                    </td>
+                    <td>
+                        <label>05.11.2017</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="block-element students-box">
+        <div class="acaption">Студенты</div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Фамилия</td>
+                    <td>Имя</td>
+                    <td>Отчество</td>
+                    <td>Пол</td>
+                    <td>Дата рождения</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 10; i++)
+                {
+                    <tr>
+                        <td>
+                            <label>@i</label>
+                        </td>
+                        <td>
+                            <label>Иванов</label>
+                        </td>
+                        <td>
+                            <label>Иван</label>
+                        </td>
+                        <td>
+                            <label>Иванович</label>
+                        </td>
+                        <td>
+                            <label>мужской</label>
+                        </td>
+                        <td>
+                            <label>01.01.1998</label>
+                        </td>
+                    </tr>
+                }  
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="right-content">
+    <div class="block-element student-courses">
+        <div class="acaption">Предметы</div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>ID курса</td>
+                    <td>Название</td>
+                    <td>Преподаватель(и)</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(int i=0; i<10; i++)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>Дискретная математика</td>
+                        <td>Иванов И.С.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="button-group">
+            <button class="btn btn-primary left-button" name="add">Добавить</button>
+            <button class="btn btn-primary right-button" name="add">Удалить</button>
+        </div>
+    </div>
+</div>
